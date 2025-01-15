@@ -12,6 +12,9 @@ const (
 	characterSet        = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 )
 
+// uint64ToBase62 takes a uint64 and converts it to a base62 number.
+// This is a convenience function for generating a short string from a
+// uint64, which is useful for generating short URLs.
 func uint64ToBase62(uint64_id uint64) string {
 	if uint64_id == 0 {
 		return "0"
@@ -25,6 +28,13 @@ func uint64ToBase62(uint64_id uint64) string {
 	return result
 }
 
+// Url_shortener takes a URL and shortens it to a shorter URL. It
+// uses a UUID to generate a random number, and then converts the
+// number to a base62 number. The base62 number is then used to
+// generate the short URL.
+//
+// The function returns the short URL as a string, as well as an error
+// if anything goes wrong.
 func Url_shortener(url string) (int, error) {
 
 	id := uuid.New()
