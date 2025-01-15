@@ -1,14 +1,14 @@
 package main
 
 import (
-	"shortener"
+	"Golang-URL-shrtnr/shortener"
 	"testing"
 )
 
 func TestHello(t *testing.T) {
-	want := "Hello World"
-	got := shortener.Hello()
-	if want != got {
-		t.Errorf("Hello() = %q, want %q", got, want)
+	url := "https://en.wikipedia.org/wiki/URL_shortener#Techniques"
+	_, err := shortener.Url_shortener(url)
+	if err != nil {
+		t.Fatal(err)
 	}
 }

@@ -6,5 +6,6 @@ import (
 )
 
 func main() {
-	shortener.Hello()
+	url := "https://en.wikipedia.org/wiki/URL_shortener#Techniques"
+	shortener.Url_shortener(url)
 }
