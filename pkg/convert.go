@@ -1,4 +1,4 @@
-package internal
+package pkg
 
 import (
 	"errors"
@@ -14,7 +14,7 @@ const (
 // uint64ToBase62 takes a uint64 and converts it to a base62 number.
 // This is a convenience function for generating a short string from a
 // uint64, which is useful for generating short URLs.
-func Uint64ToBase62(uint64_id uint64) string {
+func uint64ToBase62(uint64_id uint64) string {
 	if uint64_id == 0 {
 		return "0"
 	}
@@ -27,6 +27,9 @@ func Uint64ToBase62(uint64_id uint64) string {
 	return result
 }
 
+// FromBase62 takes a base62 string and returns the uint64 it represents.
+// It decodes the string to retrieve the key that was used to generate the
+// shortened URL.
 func FromBase62(encoded string) (uint64, error) {
 	var val uint64
 	for index, char := range encoded {
