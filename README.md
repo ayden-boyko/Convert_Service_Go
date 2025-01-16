@@ -6,9 +6,27 @@ to a base URL to form the shortened URL.
 
 ## How to use
 
-1. Clone the repository
-2. Run `go run main.go`
-3. Open a web browser and navigate to `http://localhost:8080/`
+1. Import the module into your Go project.
+2. Call the `Url_shortener` function to create a shortened URL from a long URL.
+3. Use the `FromBase62` function to decode the base62 hash back into the uint64 ID for the original long URL.
+
+### Examples
+
+```go
+// Example for Url_shortener
+id, base62_id, short_url, err := pkg.Url_shortener("www.gourl.com", "https://en.wikipedia.org/wiki/URL_shortener#Techniques")
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Println("Shortened URL:", short_url)
+
+// Example for FromBase62
+decodedID, err := pkg.FromBase62(base62_id)
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Println("Decoded ID:", decodedID, "ID returned from Url_shortener:", id)
+```
 
 ## How it works
 
