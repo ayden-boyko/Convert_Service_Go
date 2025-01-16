@@ -7,5 +7,5 @@ import (
 
 func main() {
 	url := "https://en.wikipedia.org/wiki/URL_shortener#Techniques"
-	println(shortener.Url_shortener(url))
+	println(shortener.Url_shortener("www.gourl.com", url))
 }

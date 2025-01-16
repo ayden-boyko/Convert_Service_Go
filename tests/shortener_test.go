@@ -10,7 +10,7 @@ import (
 
 func TestHello(t *testing.T) {
 	url := "https://en.wikipedia.org/wiki/URL_shortener#Techniques"
-	id, base62_id, _, err := P.Url_shortener(url)
+	id, base62_id, _, err := P.Url_shortener("www.gourl.com", url)
 	if err != nil {
 		t.Fatal(err)
 	}
