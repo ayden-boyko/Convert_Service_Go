@@ -1,7 +1,8 @@
 package main
 
 import (
-	"Golang-URL-shrtnr/shortener"
+	I "Golang-URL-shrtnr/internal"
+	S "Golang-URL-shrtnr/shortener"
 	"testing"
 )
 
@@ -10,8 +11,15 @@ import (
 
 func TestHello(t *testing.T) {
 	url := "https://en.wikipedia.org/wiki/URL_shortener#Techniques"
-	_, err := shortener.Url_shortener(url)
+	id, base62_id, _, err := S.Url_shortener(url)
 	if err != nil {
 		t.Fatal(err)
+	}
+	transformed_id, err := I.FromBase62(base62_id)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if id != transformed_id {
+		t.Fatalf("expected %d, got %d", id, transformed_id)
 	}
 }
