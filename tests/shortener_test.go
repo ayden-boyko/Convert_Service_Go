@@ -1,8 +1,9 @@
 package main
 
 import (
-	P "Golang-URL-shrtnr/pkg"
 	"testing"
+
+	P "github.com/ayden-boyko/Golang-URL-shrtnr/pkg"
 )
 
 // TestHello tests the Url_shortener function to ensure it correctly processes

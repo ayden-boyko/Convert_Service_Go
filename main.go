@@ -2,7 +2,7 @@ package main
 
 // cause path is github, not some local path
 import (
-	shortener "Golang-URL-shrtnr/pkg"
+	shortener "github.com/ayden-boyko/Golang-URL-shrtnr/pkg"
 )
 
 func main() {
