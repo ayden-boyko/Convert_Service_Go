@@ -23,7 +23,5 @@ func Url_shortener(domain string, url string) (uint64, string, string, error) {
 	id_62 := uint64ToBase62(id)
 	// sh_url := uint64ToBase62(uint64_id_sh)
 
-	short_url := domain + "/" + id_62 // + sh_url
-
-	return id, id_62, short_url, nil
+	return id, id_62, domain, nil
 }
