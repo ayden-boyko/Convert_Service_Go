@@ -1,21 +1,28 @@
 package main
 
 import (
+	"encoding/binary"
 	"testing"
 
-	P "github.com/ayden-boyko/Golang-URL-shrtnr/pkg"
+	P "github.com/ayden-boyko/Golang-URL-shrtnr"
+	"github.com/google/uuid"
 )
 
 // TestHello tests the Url_shortener function to ensure it correctly processes
 // a given URL and does not return an error. If an error occurs, the test fails.
 
-func TestHello(t *testing.T) {
-	url := "https://en.wikipedia.org/wiki/URL_shortener#Techniques"
-	id, base62_id, _, err := P.Url_shortener("www.gourl.com", url)
+func TestConvert(t *testing.T) {
+	uuid := uuid.New()
+
+	id := binary.BigEndian.Uint64(uuid[:8])
+	// uint64_id_sh := binary.BigEndian.Uint64(id[8:])
+
+	id_62, err := P.Uint64ToBase62(id)
 	if err != nil {
 		t.Fatal(err)
 	}
-	transformed_id, err := P.FromBase62(base62_id)
+
+	transformed_id, err := P.FromBase62(id_62)
 	if err != nil {
 		t.Fatal(err)
 	}
