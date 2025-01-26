@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"testing"
 
-	P "github.com/ayden-boyko/Golang-URL-shrtnr/pkg"
+	P "github.com/ayden-boyko/Convert_Service_Go/pkg"
 	"github.com/google/uuid"
 )
 
@@ -22,7 +22,7 @@ func TestConvert(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	transformed_id, err := P.FromBase62(id_62)
+	transformed_id, err := P.Base62ToUint64(id_62)
 	if err != nil {
 		t.Fatal(err)
 	}

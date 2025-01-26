@@ -1,4 +1,4 @@
-module github.com/ayden-boyko/Golang-URL-shrtnr
+module github.com/ayden-boyko/Convert_Service_Go
 
 go 1.22.5
 
