@@ -8,7 +8,7 @@ to a base URL to form the shortened URL.
 
 1. Import the module into your Go project.
 2. Call the `Url_shortener` function to create a shortened URL from a long URL.
-3. Use the `FromBase62` function to decode the base62 hash back into the uint64 ID for the original long URL.
+3. Use the `Base62ToUnit64` function to decode the base62 hash back into the uint64 ID for the original long URL.
 
 ### Examples
 
