@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"testing"
 
-	P "github.com/ayden-boyko/Golang-URL-shrtnr"
+	P "github.com/ayden-boyko/Golang-URL-shrtnr/pkg"
 	"github.com/google/uuid"
 )
 
