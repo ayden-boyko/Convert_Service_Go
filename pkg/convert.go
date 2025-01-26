@@ -41,7 +41,7 @@ func Uint64ToBase62(uint64_id uint64) (string, error) {
 // FromBase62 takes a base62 string and returns the uint64 it represents.
 // It decodes the string to retrieve the key that was used to generate the
 // shortened URL.
-func FromBase62(encoded string) (uint64, error) {
+func Base62ToUint64(encoded string) (uint64, error) {
 	if reflect.TypeOf(encoded).Kind() != reflect.String {
 		return 0, fmt.Errorf("cannot convert %s to uint64", encoded)
 	}
